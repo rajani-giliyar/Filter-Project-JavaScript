@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Filters</title>
+    <link rel="stylesheet" href="./index1.css">
+</head>
+<body>
+    <section class="container">
+        <div class="filter_box" id="filter_box">
+            <select class="inp"  onchange="setfilters('category',this.value)">
+                <option value="">Select Category</option>
+                <option value="food">Food</option>
+                <option value="drink">Drink</option>
+                <option value="dairy">Dairy</option>
+            </select>
+            <input class="inp" id="Quantity" type="number" onkeyup="setfilters('quantity',this.value)" placeholder="Quantity"/>
+
+            <div class="price_filter">
+                <h2>Select Price Range</h2>
+                Min
+                <p class="price">
+                    <span>0</span>
+                    <input class="inp no-pad" min="0" max="300"   onchange="setfilters('minPrice',this.value)" value="0" type="range">
+                    <span>300</span>
+                </p>
+                Max
+                <p class="price">
+                    <span id="lowMaxPriceLabel">0</span>
+                    <input id="maxPrice" class="inp no-pad"  min="0" max="300" onchange="setfilters('max Price',this.value)" value="0" type="range">
+                    <span>300</span>
+                </p>
+
+            </div>
+
+            <button class="btn" onclick="filter()" >Filter</button>
+
+            
+        </div>
+        <div class="data">
+            <div class="header">
+                <h1>All Products</h1>
+                <button onclick="openFilterSection()">Filters</button>
+            </div>
+            <table>
+                <thead>
+                    <tr class="check">
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Category</th>
+                      <th>Quantity</th>
+                      <th>Pic</th>
+                    </tr>
+                </thead>
+                <tbody id="data">
+
+                </tbody>
+            </table>
+           
+
+        </div>
+    </section>
+<script src="./index1.js"></script>   
+</body>
+</html>
